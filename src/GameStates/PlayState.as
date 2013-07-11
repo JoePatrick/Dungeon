@@ -7,7 +7,7 @@ package GameStates
 		
 		public function PlayState() 
 		{
-			Registry.player = new playerEntity(FlxG.width / 2 - 12, FlxG.height - 40);
+			Registry.player = new playerEntity(32, 100);
 			add(Registry.player);
 		}
 		

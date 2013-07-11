@@ -2,18 +2,20 @@ package Entities.Players
 {
 import org.flixel.*;
 import org.flixel.FlxG;
-
                
 	public class playerEntity extends FlxSprite
 	{	
 		private var destination:FlxPoint;
+		[Embed(source = '../../../assets/player.png')] private var playerPNG:Class;
 	
 		
 		public function playerEntity(x:uint, y:uint)
 		{
 			super(x, y);
 			
-			makeGraphic(10, 12, 0xffaa1111);
+			loadGraphic(playerPNG, true, true, 16, 18, true);
+			
+			addAnimation("walk", [0, 1, 0, 2], 10, true);
 			
 			maxVelocity.x = 80;
 			
@@ -41,48 +43,53 @@ import org.flixel.FlxG;
 			
 		if (distanceX == 0 && (distanceY == 0))
 		{
-		if (FlxG.keys.LEFT)
+			
+		if (FlxG.keys.justPressed ("RIGHT"))
 		{
+			play("walk");
 			destination.x  = x + 10;
 			//acceleration.x = -maxVelocity.x * 4; 
 		}
 			
-		if (FlxG.keys.RIGHT)
+		if (FlxG.keys.justPressed ("LEFT"))
 		{
+			play("walk");
 			destination.x =  x - 10;
 			//acceleration.x = maxVelocity.x * 4;
 		}
 		
-		if (FlxG.keys.UP)
+		if (FlxG.keys.justPressed ("UP"))
 		{
+			play("walk");
 			destination.y = y - 10;
 			//acceleration.y = -maxVelocity.y * 4;
 		}
 			
-		if (FlxG.keys.DOWN)
+		if (FlxG.keys.justPressed ("DOWN"))
 		{
+			play("walk");
 			destination.y = y + 10;
 			//acceleration.y = maxVelocity.y * 4;
 		}
 		}
 			if (distanceX < 0)
 			{
-				velocity.x = 10;
+				velocity.x = 100;
 			}
 			
 			if (distanceX > 0)
 			{
-				velocity.x = -10;
+				velocity.x = -100;
 			}
 			
 			if (distanceY < 0)
 			{
-				velocity.y = 10;
+				velocity.y = 100;
 			}
 			
 			if (distanceY > 0)
 			{
-				velocity.y = -10;
+				velocity.y = -100;
 			}
 			
 			var tempX:Number = x + (velocity.x * FlxG.elapsed);
