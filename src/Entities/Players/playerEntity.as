@@ -15,7 +15,7 @@ import org.flixel.FlxG;
 			
 			loadGraphic(playerPNG, true, true, 16, 18, true);
 			
-			addAnimation("walk", [0, 1, 0, 2], 10, true);
+			addAnimation("walk", [0, 1, 0, 2], 30, false);
 			
 			maxVelocity.x = 80;
 			
