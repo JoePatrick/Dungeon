@@ -1,5 +1,6 @@
 package GameStates 
 {
+	import Managers.levelManager;
 	import org.flixel.*;
 	import Entities.Players.*;
 	public class PlayState extends FlxState
@@ -8,7 +9,10 @@ package GameStates
 		public function PlayState() 
 		{
 			Registry.player = new playerEntity(0, 0);
-			add(Registry.player);
+			add(Registry.player); 
+			
+			/*Registry.level1 = new levelManager;
+			add(Registry.level1);*/
 		}
 		
 	}

@@ -1,7 +1,7 @@
 package Managers 
 {
 import org.flixel.*;
-import Entities.Player.*;
+import Entities.Players.*;
 	public class levelManager extends FlxGroup
 	{
 		public var level1map:Array;
