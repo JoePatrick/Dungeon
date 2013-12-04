@@ -3,7 +3,8 @@ package Managers
 {
 	import adobe.utils.ProductManager;
 	import org.flixel.*;
-	import org.Managers;
+	import Managers.*;
+	
 	public class mapRoom 
 	{
 		
@@ -64,7 +65,7 @@ package Managers
 			room._connectedRooms.push(this);
 		}
 		
-	/*	public function getNeighborWhere(rooms:Array, columns:int, rows:int, predicate:Function):mapRoom
+		public function getNeighborWhere(rooms:Array, columns:int, rows:int, predicate:Function):mapRoom
 		{
 			var neighbors:Array = new Array();
 			
@@ -92,7 +93,7 @@ package Managers
 				return ArrayHelpers.sample(neighbors) as mapRoom;
 			return null;
 		}
-		
+	/*	
 		public function addLightsAndPeopleToGroup(group:FlxGroup, peopleArr:Array):void
 		{
 			var i:int;

@@ -1,7 +1,7 @@
 package GameStates 
 {
 	//import Managers.levelManager;
-	import Managers.MapGenerator;
+	import Managers.mapGenerator;
 	import org.flixel.*;
 	import Entities.Players.*;
 	public class PlayState extends FlxState
@@ -17,12 +17,12 @@ package GameStates
 			Registry.player = new playerEntity(0, 0)
 			add(Registry.player); 
 			
-			Registry.mapgen = new MapGenerator
+			Registry.mapgen = new mapGenerator
 			add(Registry.mapgen);
 			
 			function getLevelData():Object
                 {
-                        return registry.mapgen.generateMap(LEVEL_WIDTH, LEVEL_HEIGHT, LEVEL_COLUMNS, LEVEL_ROWS, CORRIDOR_PADDING);
+                        return Registry.mapgen.generateMap(LEVEL_WIDTH, LEVEL_HEIGHT, LEVEL_COLUMNS, LEVEL_ROWS, CORRIDOR_PADDING);
                 }
                 
 			

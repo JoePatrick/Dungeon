@@ -2,7 +2,7 @@ package Managers
   
 {
 	import org.flixel.*;
-	import org.Managers.*;
+	import Managers.*;
 	
 	public class mapGenerator 
 	{		
